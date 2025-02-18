@@ -5,7 +5,7 @@ public class Main {
     private static final Answer answer = new Answer();
 
     public static void main(String[] args) {
-        check2080();
+        checkDispatchGoods();
     }
 
     private static void check1552() {
@@ -29,5 +29,11 @@ public class Main {
         System.out.println();
         int result2 = rangeFreqQuery.query(0, 11, 33);
         System.out.printf("Query for [0, 11, 33] result is: %d", result2);
+    }
+
+    private static void checkDispatchGoods() {
+        int[] numbs = new int[]{11, 6};
+        int result = answer.dispatchGoodsToStore(6, numbs);
+        System.out.printf("The max dispatch goods is : %d", result);
     }
 }
