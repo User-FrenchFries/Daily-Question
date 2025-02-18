@@ -1,9 +1,8 @@
+package answer;
+
 import java.util.Arrays;
 
 public class Answer implements AllQuestion {
-
-    BasicAlgorithm basicAlgorithm = new BasicAlgorithm();
-
     /**
      * 寻找最大的最小磁力，那么必然存在一个目标临界值，使得小于此值的任意值，都满足要求；大于此值的任意值均不满足。
      * 此种情况下使用二分法处理

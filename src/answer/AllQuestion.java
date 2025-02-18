@@ -1,3 +1,5 @@
+package answer;
+
 public interface AllQuestion {
 
     /**
