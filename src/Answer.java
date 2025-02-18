@@ -2,6 +2,8 @@ import java.util.Arrays;
 
 public class Answer implements AllQuestion {
 
+    BasicAlgorithm basicAlgorithm = new BasicAlgorithm();
+
     /**
      * 寻找最大的最小磁力，那么必然存在一个目标临界值，使得小于此值的任意值，都满足要求；大于此值的任意值均不满足。
      * 此种情况下使用二分法处理
@@ -46,5 +48,48 @@ public class Answer implements AllQuestion {
             }
         }
         return count >= m;
+    }
+
+    /**
+     * 对于题目中的特殊值，25%，我们可以使用二分去进行搜索，即[0~25],[25~50],[50~75],[75~100]四个部分
+     * 当然，还可以使用hashTable、滑动窗口去判别
+     *
+     * @param arr 目标数组
+     * @return 对应目标数值
+     */
+    @Override
+    public int findTarget25Num(int[] arr) {
+        int span = arr.length / 4 + 1;
+        for (int i = 0; i < arr.length; i += span) {
+            int start = binarySearchClosestIndex(arr, arr[i]);
+            int end = binarySearchClosestIndex(arr, arr[i] + 1);
+            if (end - start >= span) {
+                return arr[i];
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * 二分查找当前数组中最接近目标值的下标
+     *
+     * @param arr    目标数组
+     * @param target 目标值
+     * @return 对应值下标
+     */
+    private int binarySearchClosestIndex(int[] arr, int target) {
+        int low = 0, high = arr.length - 1;
+        int res = arr.length;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (arr[mid] >= target) {
+                res = mid;
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+
+        return res;
     }
 }
