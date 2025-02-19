@@ -1,8 +1,11 @@
 package answer;
 
 import question.BinarySearchQuestion;
+import question.NormalQuestion;
 
-public class Answer implements BinarySearchQuestion {
+import java.util.List;
+
+public class Answer implements BinarySearchQuestion, NormalQuestion {
     /****************************  Binary Search ***************************************/
     @Override
     public int getTheMaxDistance(int[] position, int m) {
@@ -20,4 +23,10 @@ public class Answer implements BinarySearchQuestion {
     }
 
     /****************************  Dynamic Programming ************************************/
+
+    /****************************  Normal ************************************/
+    @Override
+    public int getMaxDistanceInArray(List<List<Integer>> arrays) {
+        return NormalAnswer.INSTANCE.getMaxDistanceInArray(arrays);
+    }
 }
