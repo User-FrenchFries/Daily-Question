@@ -7,6 +7,7 @@ import java.util.List;
  */
 public interface NormalQuestion {
     /**
+     * Easy
      * 624. 数组列表中的最大距离
      */
     int getMaxDistanceInArray(List<List<Integer>> arrays);

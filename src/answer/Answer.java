@@ -1,11 +1,12 @@
 package answer;
 
 import question.BinarySearchQuestion;
+import question.BitOperationQuestion;
 import question.NormalQuestion;
 
 import java.util.List;
 
-public class Answer implements BinarySearchQuestion, NormalQuestion {
+public class Answer implements BinarySearchQuestion, NormalQuestion, BitOperationQuestion {
     /****************************  Binary Search ***************************************/
     @Override
     public int getTheMaxDistance(int[] position, int m) {
@@ -28,5 +29,11 @@ public class Answer implements BinarySearchQuestion, NormalQuestion {
     @Override
     public int getMaxDistanceInArray(List<List<Integer>> arrays) {
         return NormalAnswer.INSTANCE.getMaxDistanceInArray(arrays);
+    }
+
+    /****************************  Bit Operation ************************************/
+    @Override
+    public int[] evenOddBit(int n) {
+        return BitOperationAnswer.INSTANCE.evenOddBit(n);
     }
 }

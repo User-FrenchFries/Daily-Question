@@ -9,13 +9,14 @@ public final class BasicAlgorithm {
 
     public static final BasicAlgorithm INSTANCE = new BasicAlgorithm();
 
-    private BasicAlgorithm() {}
+    private BasicAlgorithm() {
+    }
 
     /**
      * int mid = (low + high) / 2：
      * 这种方式直接将 low 和 high 相加，然后除以2来得到中间值。这种方法在处理较小的整数范围时通常是没有问题的，但是如果 low 和 high 非常大，相加的结果可能会导致整数溢出，从而得到错误的中间值。
      * 推荐在实现二分算法时使用第一种方式 int mid = low + (high - low) / 2，因为它更安全，能够避免整数溢出的问题，尤其是在处理大整数范围时。
-     *
+     * <p>
      * pos = {1, 2, 2, 6, 6, 6, 6, 8, 10}  target = 6
      * l = 3   u = 7  （这里指 index）
      *
@@ -52,5 +53,22 @@ public final class BasicAlgorithm {
             }
         }
         return low;
+    }
+
+    /**
+     * 获取当前数的二进制数--辗转相处法
+     * 其实可以直接调用对应的系统方法，完成数据的转换  Integer.toBinaryString()
+     *
+     * @param decimalNumber 待处理数据
+     * @return 对应的二进制数
+     */
+    public String getValue2Bits(int decimalNumber) {
+        StringBuilder binaryNumber = new StringBuilder();
+        while (decimalNumber > 0) {
+            int remainder = decimalNumber % 2; // 求余数
+            binaryNumber.insert(0, remainder); // 将余数插入到字符串的开头
+            decimalNumber = decimalNumber / 2; // 更新被除数为商
+        }
+        return binaryNumber.toString();
     }
 }
