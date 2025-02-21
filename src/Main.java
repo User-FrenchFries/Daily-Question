@@ -5,7 +5,7 @@ public class Main {
     private static final Answer answer = new Answer();
 
     public static void main(String[] args) {
-        checkDispatchGoods();
+        check2209();
     }
 
     private static void check1552() {
@@ -35,5 +35,10 @@ public class Main {
         int[] numbs = new int[]{11, 6};
         int result = answer.dispatchGoodsToStore(6, numbs);
         System.out.printf("The max dispatch goods is : %d", result);
+    }
+
+    private static void check2209() {
+        int result = answer.minimumWhiteTiles("101111", 2, 3);
+        System.out.printf("The min num white floor is : %d", result);
     }
 }

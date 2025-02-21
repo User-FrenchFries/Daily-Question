@@ -2,11 +2,12 @@ package answer;
 
 import question.BinarySearchQuestion;
 import question.BitOperationQuestion;
+import question.DynamicProgrammingQuestion;
 import question.NormalQuestion;
 
 import java.util.List;
 
-public class Answer implements BinarySearchQuestion, NormalQuestion, BitOperationQuestion {
+public class Answer implements BinarySearchQuestion, NormalQuestion, BitOperationQuestion, DynamicProgrammingQuestion {
     /****************************  Binary Search ***************************************/
     @Override
     public int getTheMaxDistance(int[] position, int m) {
@@ -24,6 +25,10 @@ public class Answer implements BinarySearchQuestion, NormalQuestion, BitOperatio
     }
 
     /****************************  Dynamic Programming ************************************/
+    @Override
+    public int minimumWhiteTiles(String floor, int numCarpets, int carpetLen) {
+        return DynamicProgrammingAnswer.INSTANCE.minimumWhiteTiles(floor, numCarpets, carpetLen);
+    }
 
     /****************************  Normal ************************************/
     @Override
