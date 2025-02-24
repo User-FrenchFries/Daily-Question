@@ -1,13 +1,10 @@
 package answer;
 
-import question.BinarySearchQuestion;
-import question.BitOperationQuestion;
-import question.DynamicProgrammingQuestion;
-import question.NormalQuestion;
+import question.*;
 
 import java.util.List;
 
-public class Answer implements BinarySearchQuestion, NormalQuestion, BitOperationQuestion, DynamicProgrammingQuestion {
+public class Answer implements BinarySearchQuestion, NormalQuestion, BitOperationQuestion, DynamicProgrammingQuestion, StringRelatedQuestion {
     /****************************  Binary Search ***************************************/
     @Override
     public int getTheMaxDistance(int[] position, int m) {
@@ -40,5 +37,11 @@ public class Answer implements BinarySearchQuestion, NormalQuestion, BitOperatio
     @Override
     public int[] evenOddBit(int n) {
         return BitOperationAnswer.INSTANCE.evenOddBit(n);
+    }
+
+    /****************************  String Related ************************************/
+    @Override
+    public int similarPairs(String[] words) {
+        return StringRelatedAnswer.INSTANCE.similarPairs(words);
     }
 }

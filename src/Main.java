@@ -5,7 +5,7 @@ public class Main {
     private static final Answer answer = new Answer();
 
     public static void main(String[] args) {
-        check2209();
+        check2506();
     }
 
     private static void check1552() {
@@ -40,5 +40,11 @@ public class Main {
     private static void check2209() {
         int result = answer.minimumWhiteTiles("101111", 2, 3);
         System.out.printf("The min num white floor is : %d", result);
+    }
+
+    private static void check2506() {
+        String[] words = new String[]{"aba", "aabb", "abcd", "bac", "aabc"};
+        int result = answer.similarPairs(words);
+        System.out.printf("The similar String num is : %d", result);
     }
 }
