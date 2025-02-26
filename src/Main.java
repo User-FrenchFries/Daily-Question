@@ -1,11 +1,16 @@
 import answer.Answer;
+import questionBean.BrowserHistory;
 import questionBean.RangeFreqQuery;
+import utils.PrintUtil;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     private static final Answer answer = new Answer();
 
     public static void main(String[] args) {
-        check2506();
+        check1472();
     }
 
     private static void check1552() {
@@ -46,5 +51,25 @@ public class Main {
         String[] words = new String[]{"aba", "aabb", "abcd", "bac", "aabc"};
         int result = answer.similarPairs(words);
         System.out.printf("The similar String num is : %d", result);
+    }
+
+    /**
+     * 目标输出
+     * [null,null,null,null,"facebook.com","google.com","facebook.com",null,"linkedin.com","google.com","leetcode.com"]
+     */
+    private static void check1472() {
+        List<String> result = new ArrayList<>();
+        BrowserHistory history = new BrowserHistory("leetcode.com");
+        history.visit("google.com");
+        history.visit("facebook.com");
+        history.visit("youtube.com");
+        result.add(history.back(1));
+        result.add(history.back(1));
+        result.add(history.forward(1));
+        history.visit("linkedin.com");
+        result.add(history.forward(2));
+        result.add(history.back(2));
+        result.add(history.back(7));
+        PrintUtil.INSTANCE.printListToString(result);
     }
 }
