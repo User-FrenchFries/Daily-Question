@@ -41,6 +41,14 @@ public final class StringRelatedAnswer implements StringRelatedQuestion {
         return res;
     }
 
+    /**
+     * 处理后需要不再为回文串，且字典序列最小(aba < abb) --> 即第一个处理掉后使其不为回文串，且当前的坐标最小
+     * 那么，我们需要拿 a 去替换掉第一个非 a 的字符即可。若无法替换，则修改最后一个字符为 b
+     * 全为 a 的特殊情况，我们仅需要将中间的的字符替换为 b 即可完成需求
+     *
+     * @param palindrome 待处理的回文串
+     * @return 处理后的内容
+     */
     @Override
     public String breakPalindrome(String palindrome) {
         if (palindrome.length() > 1) {
