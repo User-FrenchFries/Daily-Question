@@ -1,6 +1,7 @@
 package answer;
 
 import question.StringRelatedQuestion;
+import utils.StringUtil;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,5 +39,26 @@ public final class StringRelatedAnswer implements StringRelatedQuestion {
             cnt.put(state, cnt.getOrDefault(state, 0) + 1);
         }
         return res;
+    }
+
+    @Override
+    public String breakPalindrome(String palindrome) {
+        if (palindrome.length() > 1) {
+            // replaceAll 不会破坏传递的原始字符串，可以不用拷贝新的字符串去处理
+            // 一般对于字串，不直接进行操作，而是转为charArray进行处理
+            if (palindrome.replaceAll("a", "").isEmpty()) {
+                return StringUtil.INSTANCE.replaceCharAtIndex(palindrome, palindrome.length() / 2, 'b');
+            } else {
+                for (int i = 0; i < palindrome.length() / 2; i++) {
+                    if (palindrome.charAt(i) != 'a') {
+                        return palindrome.replaceFirst(String.valueOf(palindrome.charAt(i)), "a");
+                    }
+                }
+                // aba --> abb;直接替换b，又会使得其变为回文串
+                return StringUtil.INSTANCE.replaceCharAtIndex(palindrome, palindrome.length() - 1, 'b');
+            }
+        } else {
+            return "";
+        }
     }
 }

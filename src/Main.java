@@ -10,7 +10,7 @@ public class Main {
     private static final Answer answer = new Answer();
 
     public static void main(String[] args) {
-        check1472();
+        check1328();
     }
 
     private static void check1552() {
@@ -71,5 +71,11 @@ public class Main {
         result.add(history.back(2));
         result.add(history.back(7));
         PrintUtil.INSTANCE.printListToString(result);
+    }
+
+    private static void check1328() {
+        String palindrome = "abccba";
+        String result = answer.breakPalindrome(palindrome);
+        System.out.printf("The break palindrome String is : %s", result);
     }
 }

@@ -44,4 +44,9 @@ public class Answer implements BinarySearchQuestion, NormalQuestion, BitOperatio
     public int similarPairs(String[] words) {
         return StringRelatedAnswer.INSTANCE.similarPairs(words);
     }
+
+    @Override
+    public String breakPalindrome(String palindrome) {
+        return StringRelatedAnswer.INSTANCE.breakPalindrome(palindrome);
+    }
 }
