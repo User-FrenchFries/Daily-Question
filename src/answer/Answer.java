@@ -4,7 +4,12 @@ import question.*;
 
 import java.util.List;
 
-public class Answer implements BinarySearchQuestion, NormalQuestion, BitOperationQuestion, DynamicProgrammingQuestion, StringRelatedQuestion {
+public class Answer implements BinarySearchQuestion,
+        NormalQuestion,
+        BitOperationQuestion,
+        DynamicProgrammingQuestion,
+        StringRelatedQuestion,
+        BacktraceRelatedQuestion {
     /****************************  Binary Search ***************************************/
     @Override
     public int getTheMaxDistance(int[] position, int m) {
@@ -48,5 +53,11 @@ public class Answer implements BinarySearchQuestion, NormalQuestion, BitOperatio
     @Override
     public String breakPalindrome(String palindrome) {
         return StringRelatedAnswer.INSTANCE.breakPalindrome(palindrome);
+    }
+
+    /****************************  BackTrace/DFS Related ************************************/
+    @Override
+    public List<List<String>> solveEightQueens() {
+        return BacktraceRelatedAnswer.INSTANCE.solveEightQueens();
     }
 }

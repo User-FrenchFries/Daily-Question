@@ -10,6 +10,7 @@ public interface StringRelatedQuestion {
     int similarPairs(String[] words);
 
     /**
+     * Middle
      * 1328. 破坏回文串
      * @param palindrome 待处理回文串
      * @return 处理后字段

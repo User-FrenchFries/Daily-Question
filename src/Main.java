@@ -10,7 +10,7 @@ public class Main {
     private static final Answer answer = new Answer();
 
     public static void main(String[] args) {
-        check1328();
+        testEightQueen();
     }
 
     private static void check1552() {
@@ -77,5 +77,10 @@ public class Main {
         String palindrome = "abccba";
         String result = answer.breakPalindrome(palindrome);
         System.out.printf("The break palindrome String is : %s", result);
+    }
+
+    public static void testEightQueen() {
+        List<List<String>> result = answer.solveEightQueens();
+        System.out.printf("The final result count is : %d", result.size());
     }
 }
