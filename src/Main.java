@@ -10,7 +10,7 @@ public class Main {
     private static final Answer answer = new Answer();
 
     public static void main(String[] args) {
-        testEightQueen();
+        check200();
     }
 
     private static void check1552() {
@@ -82,5 +82,16 @@ public class Main {
     public static void testEightQueen() {
         List<List<String>> result = answer.solveEightQueens();
         System.out.printf("The final result count is : %d", result.size());
+    }
+
+    private static void check200() {
+        char[][] grid = {
+                {'1', '1', '0', '0', '0'},
+                {'1', '1', '0', '0', '0'},
+                {'0', '0', '1', '0', '0'},
+                {'0', '0', '0', '1', '1'}
+        };
+        int result = answer.numIslands(grid);
+        System.out.printf("The count of island is : %d", result);
     }
 }

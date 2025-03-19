@@ -9,7 +9,8 @@ public class Answer implements BinarySearchQuestion,
         BitOperationQuestion,
         DynamicProgrammingQuestion,
         StringRelatedQuestion,
-        BacktraceRelatedQuestion {
+        BacktraceRelatedQuestion,
+        DFSRelatedQuestion {
     /****************************  Binary Search ***************************************/
     @Override
     public int getTheMaxDistance(int[] position, int m) {
@@ -59,5 +60,11 @@ public class Answer implements BinarySearchQuestion,
     @Override
     public List<List<String>> solveEightQueens() {
         return BacktraceRelatedAnswer.INSTANCE.solveEightQueens();
+    }
+
+    /****************************  DFS Related ************************************/
+    @Override
+    public int numIslands(char[][] grid) {
+        return DFSRelatedAnswer.INSTANCE.numIslands(grid);
     }
 }
