@@ -16,4 +16,13 @@ public interface StringRelatedQuestion {
      * @return 处理后字段
      */
     String breakPalindrome(String palindrome);
+
+    /**
+     * Middle
+     * 1061. 按字典序排列最小的等效字符串
+     * @param s1 待匹配字符串1
+     * @param s2 待匹配字符串2
+     * @param baseStr 需要替换字符串
+     */
+    String smallestEquivalentString(String s1, String s2, String baseStr);
 }

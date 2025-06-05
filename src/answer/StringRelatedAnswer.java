@@ -1,6 +1,7 @@
 package answer;
 
 import question.StringRelatedQuestion;
+import questionBean.UnionFindMinStr;
 import utils.StringUtil;
 
 import java.util.HashMap;
@@ -68,5 +69,19 @@ public final class StringRelatedAnswer implements StringRelatedQuestion {
         } else {
             return "";
         }
+    }
+
+    @Override
+    public String smallestEquivalentString(String s1, String s2, String baseStr) {
+        UnionFindMinStr uf = new UnionFindMinStr(26);
+        for (int i = 0; i < s1.length(); i++) {
+            uf.unite(s1.charAt(i) - 'a', s2.charAt(i) - 'a');
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (char c : baseStr.toCharArray()) {
+            sb.append((char) ('a' + uf.find(c - 'a')));
+        }
+        return sb.toString();
     }
 }

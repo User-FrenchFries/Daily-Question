@@ -10,7 +10,7 @@ public class Main {
     private static final Answer answer = new Answer();
 
     public static void main(String[] args) {
-        check200();
+        check1061();
     }
 
     private static void check1552() {
@@ -93,5 +93,13 @@ public class Main {
         };
         int result = answer.numIslands(grid);
         System.out.printf("The count of island is : %d", result);
+    }
+
+    private static void check1061() {
+        String s1 = "cgokcgerolkgksgbhgmaaealacnsshofjinidiigbjerdnkolc";
+        String s2 = "rjjlkbmnprkslilqmbnlasardrossiogrcboomrbcmgmglsrsj";
+        String baseStr = "bxbwjlbdazfejdsaacsjgrlxqhiddwaeguxhqoupicyzfeupcn";
+        String result = answer.smallestEquivalentString(s1, s2, baseStr);
+        System.out.printf("The final result str is : %s", result);
     }
 }

@@ -56,6 +56,11 @@ public class Answer implements BinarySearchQuestion,
         return StringRelatedAnswer.INSTANCE.breakPalindrome(palindrome);
     }
 
+    @Override
+    public String smallestEquivalentString(String s1, String s2, String baseStr) {
+        return StringRelatedAnswer.INSTANCE.smallestEquivalentString(s1, s2, baseStr);
+    }
+
     /****************************  BackTrace/DFS Related ************************************/
     @Override
     public List<List<String>> solveEightQueens() {
