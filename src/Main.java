@@ -1,16 +1,17 @@
+import java.util.ArrayList;
+import java.util.List;
+
 import answer.Answer;
 import questionBean.BrowserHistory;
 import questionBean.RangeFreqQuery;
 import utils.PrintUtil;
-
-import java.util.ArrayList;
-import java.util.List;
+import utils.SortUtil;
 
 public class Main {
     private static final Answer answer = new Answer();
 
     public static void main(String[] args) {
-        check1061();
+        checkSortUtil();
     }
 
     private static void check1552() {
@@ -101,5 +102,11 @@ public class Main {
         String baseStr = "bxbwjlbdazfejdsaacsjgrlxqhiddwaeguxhqoupicyzfeupcn";
         String result = answer.smallestEquivalentString(s1, s2, baseStr);
         System.out.printf("The final result str is : %s", result);
+    }
+
+    private static void checkSortUtil() {
+        int[] source = new int[]{1, 3, 2, 6, 5, 8, 11, 2};
+        SortUtil.INSTANCE.quickSort(source);
+        PrintUtil.INSTANCE.printListToString(PrintUtil.convertIntArrayToList(source));
     }
 }
