@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import answer.Answer;
+import interview.string.PalindromeRelatedQuestion;
 import questionBean.BrowserHistory;
 import questionBean.RangeFreqQuery;
 import utils.PrintUtil;
@@ -11,7 +12,7 @@ public class Main {
     private static final Answer answer = new Answer();
 
     public static void main(String[] args) {
-        checkSortUtil();
+        checkPalindromeUtil();
     }
 
     private static void check1552() {
@@ -108,5 +109,11 @@ public class Main {
         int[] source = new int[]{1, 3, 2, 6, 5, 8, 11, 2};
         SortUtil.INSTANCE.quickSort(source);
         PrintUtil.INSTANCE.printListToString(PrintUtil.convertIntArrayToList(source));
+    }
+
+    private static void checkPalindromeUtil() {
+        String source = "fwasdwafabbccbbaadwasdwa";
+        PalindromeRelatedQuestion palindromeRelatedQuestion = new PalindromeRelatedQuestion();
+        palindromeRelatedQuestion.longestPalindromeSubseq(source);
     }
 }
