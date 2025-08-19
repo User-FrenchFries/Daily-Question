@@ -3,7 +3,7 @@ package interview.string;
 /**
  * Author: JohnZeng
  * Date: 2023/9/20 14:03
- * Description: 添加回文字符串相关的解法
+ * Description: 添加回文字符串相关的解法 --- 由其物理特性切入，加载对应解决方法
  * History:
  * <author> <time> <version> <desc>
  * JohnZeng 2023/9/20 1.0 首次创建

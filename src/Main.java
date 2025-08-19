@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import answer.Answer;
+import interview.string.LcsRelatedQuestion;
 import interview.string.PalindromeRelatedQuestion;
 import questionBean.BrowserHistory;
 import questionBean.RangeFreqQuery;
@@ -12,7 +13,7 @@ public class Main {
     private static final Answer answer = new Answer();
 
     public static void main(String[] args) {
-        checkPalindromeUtil();
+        checkLcsRelatedQuestion();
     }
 
     private static void check1552() {
@@ -115,5 +116,13 @@ public class Main {
         String source = "fwasdwafabbccbbaadwasdwa";
         PalindromeRelatedQuestion palindromeRelatedQuestion = new PalindromeRelatedQuestion();
         palindromeRelatedQuestion.longestPalindromeSubseq(source);
+    }
+
+    private static void checkLcsRelatedQuestion() {
+        String text1 = "abcbc";
+        String text2 = "bcb";
+        LcsRelatedQuestion lcsRelatedQuestion = new LcsRelatedQuestion();
+        String result = lcsRelatedQuestion.getLCS(text1, text2);
+        System.out.printf("The final lcs str is : %s", result);
     }
 }
