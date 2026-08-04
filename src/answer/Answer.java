@@ -1,5 +1,6 @@
 package answer;
 
+import org.jetbrains.annotations.NotNull;
 import question.*;
 
 import java.util.List;
@@ -10,7 +11,8 @@ public class Answer implements BinarySearchQuestion,
         DynamicProgrammingQuestion,
         StringRelatedQuestion,
         BacktraceRelatedQuestion,
-        DFSRelatedQuestion {
+        DFSRelatedQuestion,
+        SlidingWindowQuestion {
     /****************************  Binary Search ***************************************/
     @Override
     public int getTheMaxDistance(int[] position, int m) {
@@ -71,5 +73,12 @@ public class Answer implements BinarySearchQuestion,
     @Override
     public int numIslands(char[][] grid) {
         return DFSRelatedAnswer.INSTANCE.numIslands(grid);
+    }
+
+    /****************************  Sliding Window Related ************************************/
+    @NotNull
+    @Override
+    public int[] getSubarrayBeauty(@NotNull int[] nums, int k, int x) {
+        return SlidingWindowAnswer.INSTANCE.getSubarrayBeauty(nums, k, x);
     }
 }
