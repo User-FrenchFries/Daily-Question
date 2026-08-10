@@ -81,4 +81,9 @@ public class Answer implements BinarySearchQuestion,
     public int[] getSubarrayBeauty(@NotNull int[] nums, int k, int x) {
         return SlidingWindowAnswer.INSTANCE.getSubarrayBeauty(nums, k, x);
     }
+
+    @Override
+    public int maxVowels(String s, int k) {
+        return SlidingWindowAnswer.INSTANCE.maxVowels(s, k);
+    }
 }

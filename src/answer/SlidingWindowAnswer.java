@@ -3,6 +3,9 @@ package answer;
 import org.jetbrains.annotations.NotNull;
 import question.SlidingWindowQuestion;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class SlidingWindowAnswer implements SlidingWindowQuestion {
     public static final SlidingWindowAnswer INSTANCE = new SlidingWindowAnswer();
 
@@ -41,5 +44,34 @@ public class SlidingWindowAnswer implements SlidingWindowQuestion {
             if (countX >= x) return i - 50;
         }
         return 0;
+    }
+
+    /**
+     * 还可以再优化，无需维护对应的List存储判断字串，直接条件判断就行，没有多少个字符
+     * @param s
+     * @param k
+     * @return
+     */
+    @Override
+    public int maxVowels(String s, int k) {
+        List<Character> targetChar = Arrays.asList('a', 'e', 'i', 'o', 'u');
+        int count = 0;
+        int maxValue;
+        for (int i = 0; i < k; i++) {
+            if (targetChar.contains(s.charAt(i))) count++;
+        }
+        maxValue = count;
+        for (int i = k; i < s.length(); i++) {
+            boolean front = targetChar.contains(s.charAt(i));
+            boolean behind = targetChar.contains(s.charAt(i - k));
+            if (front && !behind) {
+                count++;
+            }
+            if (!front && behind) {
+                count--;
+            }
+            if (count > maxValue) maxValue = count;
+        }
+        return maxValue;
     }
 }

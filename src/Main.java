@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 import answer.Answer;
 import interview.string.LcsRelatedQuestion;
 import interview.string.PalindromeRelatedQuestion;
@@ -9,11 +6,14 @@ import questionBean.RangeFreqQuery;
 import utils.PrintUtil;
 import utils.SortUtil;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     private static final Answer answer = new Answer();
 
     public static void main(String[] args) {
-        checkLcsRelatedQuestion();
+        checkQuestion1456();
     }
 
     private static void check1552() {
@@ -124,5 +124,12 @@ public class Main {
         LcsRelatedQuestion lcsRelatedQuestion = new LcsRelatedQuestion();
         String result = lcsRelatedQuestion.getLCS(text1, text2);
         System.out.printf("The final lcs str is : %s", result);
+    }
+
+    private static void checkQuestion1456() {
+        String s = "abciiidef";
+        int k = 3;
+        int result = answer.maxVowels(s, k);
+        System.out.printf("The max value of str is : %d", result);
     }
 }
