@@ -7,13 +7,14 @@ import utils.PrintUtil;
 import utils.SortUtil;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
     private static final Answer answer = new Answer();
 
     public static void main(String[] args) {
-        checkQuestion1456();
+        checkTopKMaxValue();
     }
 
     private static void check1552() {
@@ -131,5 +132,12 @@ public class Main {
         int k = 3;
         int result = answer.maxVowels(s, k);
         System.out.printf("The max value of str is : %d", result);
+    }
+
+    private static void checkTopKMaxValue() {
+        List<Integer> source = Arrays.asList(0, 1, 2, 3, 4, 6, 89, 14, 6, 45, -1, -86);
+        int k = 3;
+        List<Integer> result = answer.topKMaxInArray(source, k);
+        PrintUtil.INSTANCE.printListToString(result);
     }
 }

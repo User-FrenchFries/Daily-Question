@@ -41,6 +41,11 @@ public class Answer implements BinarySearchQuestion,
         return NormalAnswer.INSTANCE.getMaxDistanceInArray(arrays);
     }
 
+    @Override
+    public List<Integer> topKMaxInArray(List<Integer> arrays, int k) {
+        return NormalAnswer.INSTANCE.topKMaxInArray(arrays, k);
+    }
+
     /****************************  Bit Operation ************************************/
     @Override
     public int[] evenOddBit(int n) {

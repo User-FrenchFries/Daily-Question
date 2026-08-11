@@ -3,6 +3,7 @@ package answer;
 import question.NormalQuestion;
 
 import java.util.List;
+import java.util.PriorityQueue;
 
 public final class NormalAnswer implements NormalQuestion {
 
@@ -34,5 +35,23 @@ public final class NormalAnswer implements NormalQuestion {
             preMax = Math.max(preMax, curList.get(length - 1));
         }
         return ans;
+    }
+
+    @Override
+    public List<Integer> topKMaxInArray(List<Integer> arrays, int k) {
+        // 升序为小顶堆，及最小值在顶部
+        // b-a为降序，大的在前，故为大顶堆
+        PriorityQueue<Integer> targetQueue = new PriorityQueue<>((a, b) -> b - a);
+        for (int i : arrays) {
+            if (targetQueue.size() < k) {
+                targetQueue.add(i);
+            } else {
+                if (i < targetQueue.peek()) {
+                    targetQueue.poll();
+                    targetQueue.add(i);
+                }
+            }
+        }
+        return targetQueue.stream().toList();
     }
 }
